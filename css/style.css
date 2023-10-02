@@ -1,0 +1,473 @@
+/* Universal classes */
+/* Font sizes */
+.f-17 {
+    font-size: 17px;
+}
+.f-18 {
+    font-size: 18px;
+}
+.f-19 {
+    font-size: 19px;
+}
+.f-20 {
+    font-size: 20px;
+}
+.f-25 {
+    font-size: 25px;
+}
+.f-15 {
+    font-size: 15px;
+}
+
+/* Font Weight Setup */
+.fw-500 {
+    font-weight: 500;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.fw-800 {
+    font-weight: 800;
+}
+.fw-900 {
+    font-weight: 900;
+}
+/* Color classes */
+.ct-blue-1 {
+    color: rgb(25, 25, 197);
+}
+.ct-blue-2 {
+    color: rgb(7, 7, 37);
+}
+.ct-purple-1 {
+    color: rgb(190, 50, 190);
+}
+.ct-purple-2 {
+    color: rgb(63, 11, 63);
+}
+
+/* Color setup */
+:root {
+    --primary-blue: rgb(25, 25, 197);
+    --primary-purple: rgb(190, 50, 190);
+    --primary-dark-purple: rgb(63, 11, 63);
+    --primary-dark-blue: rgb(7, 7, 37);
+    --black: #010101;
+    --gray-1: #788190;
+    --gray-2: #d3d4db;
+    --white: #ffffff;
+    --body: #fefefe;
+}
+
+/* Button */
+.btn {
+    border-radius: 8px;
+}
+.btn-primary, .btn-outline-secondary {
+    padding: 17px 20px;
+}
+.btn-primary {
+    background-color: var(--primary-blue);
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark-blue);
+}
+.btn-outline-secondary {
+    border: 1px solid var(--gray-2);
+    color: var(--black);
+}
+.btn-outline-secondary:hover {
+    background-color: var(--primary-dark-purple);
+    border: 1px solid var(--primary-dark-purple);
+    color: white;
+}
+.btn-outline-secondary:focus {
+    background-color: var(--primary-dark-purple);
+    border: 1px solid var(--primary-dark-purple);
+    color: white;
+}
+
+/* Body */
+body {
+    background-color: var(--body);
+    overflow-x: hidden ;
+}
+
+/* -------------------------------------
+    Navbar Section 
+--------------------------------------*/
+.navbar .navbar-collapse ul li {
+    padding: 0px 15px;
+}
+.navbar .navbar-collapse ul li .nav-link {
+    color: rgb(25, 25, 197);
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    padding-left: 5px;
+}
+.navbar .navbar-collapse ul li .nav-link:hover {
+    color: var(--primary-dark-purple);
+}
+.navbar .navbar-collapse ul li .nav-link.active {
+    color: var(--primary-dark-purple);
+}
+.navbar .navbar-collapse ul li .nav-link::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--primary-dark-purple);
+    margin-bottom: 5px;
+    transition: all 0.7s ease-in-out;
+}
+.navbar .navbar-collapse ul li .nav-link:hover::before {
+    right: 0;
+}
+.navbar .navbar-collapse ul li .nav-link.active::before {
+    right: 0;
+}
+.navbar .navbar-collapse .btn-outline-secondary {
+    border: 1px solid var(--gray-2);
+    color: var(--black);
+    line-height: 20px;
+    padding: 10px 20px;
+}
+.navbar .navbar-collapse .btn-outline-secondary:hover {
+    color: white;
+    background-color: var(--primary-dark-purple);
+}
+.navbar .navbar-collapse .btn-outline-secondary:focus {
+    color: white;
+    background-color: var(--primary-dark-purple);
+}
+#navbar-btn {
+    border: 1px solid whitesmoke;
+}
+#navbar-btn:focus {
+    border: 1px solid whitesmoke;
+    outline: 1px solid whitesmoke;
+    box-shadow: 0 0 0 0.25rem whitesmoke;
+}
+/*-------------------------------------------
+    Hero Section 
+-------------------------------------------*/
+.hero {
+    padding: 80px 0px;
+    overflow: hidden;
+}
+.hero .text-bg {
+    width: 50%;
+}
+.hero .text  {
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 60px;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+.hero .buttons {
+    padding-top: 30px;
+    margin-bottom: 15px;
+}
+.hero .buttons .btn {
+    display: inline-block;
+    margin: 10px 10px;
+}
+.hero .diagram {
+    position: relative;
+    width: 50%;
+    height: 460px;
+    animation-name: bounce-anime;
+    animation-duration: 4s;
+    /* transform: translateY(-100%); */
+    /* animation-delay: 1s; */
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    transition: all 2s ease-in-out;
+    /* animation-iteration-count: infinite; */
+}
+@keyframes bounce-anime {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-40%);
+        height: 300px;
+    }
+    100% {
+        transform: translateY(0%);
+        height: 460px;
+    }
+}
+.hero .diagram .img-1 {
+    position: absolute;
+    left: 40%;
+    top: 0%;
+    z-index: 2;
+    height: 500px;
+    width: 500px;
+}
+.hero .diagram .img-2 {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    z-index: 2;
+    height: 150px;
+    width: 150px;
+    animation-name: rocket-anime;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+}
+@keyframes rocket-anime{
+    0% {
+        top: 50%;
+        left: 10%;
+    }
+    100% {
+        top: 10%;
+        left: 50%;
+    }
+}
+/*-------------------------------------------
+    Setup Section 
+-------------------------------------------*/
+.setup {
+    padding: 50px;
+    margin-bottom: 30px;
+}
+.setup .text-header {
+    margin-bottom: 50px;
+}
+.setup .text-header h3 {
+    color: var(--primary-dark-purple);
+    line-height: 43px;
+    font-weight: 700;
+    font-size: 39px;
+    margin-bottom: 10px;
+}
+.setup .text-header p {
+    color: var(--gray-1);
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: 19px;
+}
+.setup .items {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.setup .items .icons {
+    padding: 27px 0;
+}
+.setup .items .icons img {
+    height: 100px;
+    width: 100px;
+}
+.setup .items .setup-card {
+    padding: 10px;
+    border: 2px solid var(--primary-dark-purple);
+    border-radius: 20px;
+    transform: translateY(40%);
+    opacity: 0;
+}
+.setup .items .setup-card.reveal {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+.setup .items .setup-card:hover {
+    background-color: var(--primary-dark-purple);
+    margin-top: -10px;
+}
+.setup .items .setup-card:hover .desc h5 {
+    color: white;
+}
+.setup .items .setup-card:hover .desc p {
+    color: white;
+}
+.setup .items .setup-card .desc h5 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--primary-dark-blue);
+    padding-bottom: 18px;
+}
+.setup .items .setup-card .desc p {
+    font-weight: 400;
+    font-size:13px;
+    line-height: 22px;
+    color: var(--gray-1);
+    max-width: 284px;
+    margin: 0 auto;
+}
+/*-------------------------------------------
+    Information Section 
+-------------------------------------------*/
+.information .text-information {
+    padding: 134px 0px;
+
+}
+.information .text-information h5 {
+    font-weight: 800;
+    font-size: 43px;
+    line-height: 43px;
+    color: var(--primary-blue);
+}
+.information .text-information p {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 25px;
+    color: var(--black);
+}
+.information .info-1 {
+    padding: 103px 0px;
+}
+/*-------------------------------------------
+    Footer Section 
+-------------------------------------------*/
+footer {
+    padding-top: 100px;
+    margin-top: 30px;
+}
+footer a {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--black);
+    line-height: 14px;
+}
+footer .copy  {
+    margin-top: 32px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+}
+/*----------------------------
+    Responsive Section 
+-----------------------------*/
+@media (max-width: 1200px) {
+    .hero .text {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 50px;
+    }
+}
+@media (max-width : 600px) {
+    .hero .text {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 40px;
+    }
+}
+@media (max-width: 1200px) {
+    .setup .text-header h3 {
+        line-height: 30px;
+        font-weight: 700;
+        font-size: 29px;
+    }
+    .setup .text-header p {
+        line-height: 20px;
+        font-weight: 400;
+        font-size: 15px;
+    }
+}
+@media (max-width : 600px) {
+    .information .text-information {
+        padding: 90px 0px;
+    }
+    .information .info-1 {
+        padding: 60px 0px;
+    }
+    .information .text-information h5 {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .information .text-information p {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 20px;
+        color: var(--black);
+        text-align: center;
+    }
+}
+@media (max-width : 1200px) {
+    .information .text-information {
+        padding: 90px 0px;
+    }
+    .information .info-1 {
+        padding: 80px 0px;
+    }
+    .information .text-information h5 {
+        font-weight: 700;
+        font-size: 29px;
+        line-height: 30px;
+    }
+    .information .text-information p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        color: var(--black);
+    }
+}
+@media (max-width: 991px) {
+    .hero .text {
+        text-align: center;
+    }
+    .hero .buttons {
+        text-align: center;
+    }
+    .hero {
+        overflow: hidden;
+    }
+    .hero .text-bg {
+        width: 100%;
+    }
+    .hero .diagram {
+        margin-top: 40px;
+        width: 100%;
+        height: 400px;
+    }
+    .hero .diagram .img-1 {
+        left: 30%;
+        top: -10%;
+    }
+    .hero .diagram .img-2 {
+        height: 100px;
+        width: 100px;
+        top: 60%;
+        left: 10%;
+    }
+    @keyframes rocket-anime{
+        0% {
+            top: 60%;
+            left: 10%;
+        }
+        100% {
+            top: 10%;
+            left: 50%;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .setup .items .setup-card {
+        margin: 30px 0px;
+    }
+}
